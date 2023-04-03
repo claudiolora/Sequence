@@ -1,2 +1,0 @@
-D:\Sviluppo\Core\Sequence\Build\net7.0\win-x64\publish\Sequence.pdb
-D:\Sviluppo\Core\Sequence\Build\net7.0\win-x64\publish\Sequence.exe

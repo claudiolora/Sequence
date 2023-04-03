@@ -1,6 +1,0 @@
-d:\Sviluppo\Core\Sequence\Build\net7.0\publish\Sequence.exe
-d:\Sviluppo\Core\Sequence\Build\net7.0\publish\Sequence.dll
-d:\Sviluppo\Core\Sequence\Build\net7.0\publish\Sequence.deps.json
-d:\Sviluppo\Core\Sequence\Build\net7.0\publish\Sequence.runtimeconfig.json
-d:\Sviluppo\Core\Sequence\Build\net7.0\publish\Sequence.pdb
-d:\Sviluppo\Core\Sequence\Build\net7.0\publish\Newtonsoft.Json.dll

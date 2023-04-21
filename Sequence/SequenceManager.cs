@@ -30,6 +30,10 @@ public class SequenceManager
         return Replace(index, model.Elements);
     }    
 
+    /// <summary>
+    /// Combinazioni con ripetizioni
+    /// </summary>
+    /// <returns></returns>
     public List<object[]> Combinations()
     {        
         List<int[]> index = Combinatory.Combinations(model.Elements.Length, model.Repetitions);

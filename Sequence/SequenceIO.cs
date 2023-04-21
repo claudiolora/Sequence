@@ -1,4 +1,6 @@
+using System.Diagnostics;
 using Newtonsoft.Json;
+using Sequence.Serializer;
 
 namespace Sequence;
 
@@ -6,7 +8,7 @@ public class SequenceIO
 {
 
     string fileIn = "Sequence.json";
-    string fileOut = "Result.csv";
+    string fileOut = "Result.xls";
 
     SequenceInputModel model;
 
@@ -20,7 +22,6 @@ public class SequenceIO
             Elements = new object[] { "a", "b", "c", "d", "e" }
             //elements = new object[] { 1, 2, 3, 4, 5 } //,6,7,8,9,10,11,12
         };
-
 
     }
 
@@ -61,6 +62,9 @@ public class SequenceIO
         //Console.WriteLine("Combinations");
         var result = manager.Combinations();
 
+
+        var serializer = FactorySerialzer.Get(fileOut);
+
         //ok
         //Console.WriteLine("SimpleCombinations");
         //var result = manager.SimpleCombinations();
@@ -74,7 +78,7 @@ public class SequenceIO
         //var result = manager.Permutation();
 
 
-        if (File.Exists(fileOut))
+        if (File.Exists(fileOut) && !Debugger.IsAttached)
         {
             Console.WriteLine($"File already exists {fileOut}, Override [Y/N]?");
 
@@ -85,9 +89,11 @@ public class SequenceIO
             if (!key.ToUpper().Equals("Y"))
                 return;
         }
+    
+        serializer.Write(result);
 
-        //PrintCsv<object>(a);
-        PrintCsv<object>(result);
+        if(File.Exists(fileOut))
+            Process.Start("explorer.exe", fileOut);
     }
 
     private void PrintConsole<T>(List<T[]> res)
@@ -121,8 +127,8 @@ public class SequenceIO
                     file.WriteLine("");
                 }
             }
-        } 
-        catch(Exception)
+        }
+        catch (Exception)
         {
             Console.WriteLine("File may be open");
             Thread.Sleep(5000);

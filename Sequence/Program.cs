@@ -12,7 +12,15 @@ namespace Sequence
         {
             SequenceIO s = new SequenceIO();
             s.LoadFile();
-            s.Run();
+            try
+            {
+                s.Run();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                Thread.Sleep(5000);
+            }
         }
 
     }

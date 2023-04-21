@@ -125,7 +125,9 @@ public class Combinatory
     internal static List<int[]> Combinations(int n, int k)
     {
         // Gli n elementi sono i numeri da 0 a n-1.
-        // In C(5, 3), prima combinazione è comb[0, 1, 2]; ultima combinazione è [2, 3, 4].
+        // In C'(5, 3), prima combinazione è comb[0, 0, 0]; ultima combinazione è [4, 4, 4].
+        //C(n,k) = n!/[k!*(n-k)!]
+        //C'(n,k) = C(n+k-1, k) = (n+k-1)!/[k!(n-1)!]
 
         List<int[]> ret = new List<int[]>();
         int[] comb = new int[k];     // Combinazione generica

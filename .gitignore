@@ -1,2 +1,4 @@
 /Build
-/obj
+Sequence/obj
+Result.*
+Sequence.json

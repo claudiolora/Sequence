@@ -14,6 +14,48 @@
                 // Do not generate summary otherwise it leads to duplicate errors in Problems panel
                 "/consoleloggerparameters:NoSummary"
             ],
+            // Permtte di selezionare il tast con F1
+            "group": "build", 
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "standalone",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "publish",
+                "/p:PublishDir=../Build/Standalone",
+                // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Con true non funziona il debug, attiva di default SelfContained=true
+                "/property:PublishSingleFile=true",   
+                //Per standalone application (con tutto il fw micorsoft)  
+                "/property:SelfContained=true",
+                // Per modificare il target di SelfContained (default win-x64)
+                "/property:RuntimeIdentifier=win-x64",
+                "/property:EnableCompressionInSingleFile=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "publish",
+                "/p:PublishDir=../Build/Publish",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
             "group": "build",
             "presentation": {
                 "reveal": "silent"
